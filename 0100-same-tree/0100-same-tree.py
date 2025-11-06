@@ -11,8 +11,8 @@ class Solution:
             # Base case, when tree is None, create a list with None
             if not node:
                 return [None]
-            # Perform recursive dfs preorder traverse
-            # this preorder checks if structure of tree is same in both as you traverse 
+            # Perform recursive dfs postorder traverse
+            # this postorder checks if structure of tree is same in both as you traverse 
             left = dfs(node.left)
             right = dfs(node.right)
             # we are building a list of all nodes inside the tree at the node including itself and returning it at each node
