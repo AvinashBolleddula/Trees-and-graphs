@@ -7,6 +7,7 @@
 class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
 
+        # First find depth of tree using post dfs
         def post_dfs(node):
             if not node:
                 return 0
@@ -15,9 +16,12 @@ class Solution:
             left = post_dfs(node.left)
             right = post_dfs(node.right)
             return max(left,right) + 1
+        # depth of tree
         depth  = post_dfs(root)
 
 
+        #BFS traverse through the tree
+        # when at depth of tree, loop through queue and add values
         queue = deque([root])
         ans = 0
         length = 0
